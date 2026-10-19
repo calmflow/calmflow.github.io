@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafc" />
+    <title>MAFF LAB — 호기심에서 시작되는 새로운 가능성</title>
+    <meta name="description" content="AI와 디지털 기술을 배우고, 아이디어를 직접 만들어보는 공간. MAFF LAB은 작은 시도에서 다음 가능성을 발견합니다." />
+    <link rel="canonical" href={Astro.url.origin + '/'} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/pretendard-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="MAFF LAB" />
+    <meta property="og:title" content="MAFF LAB — 호기심에서 시작되는 새로운 가능성" />
+    <meta property="og:description" content="AI와 디지털 기술을 배우고, 아이디어를 직접 만들어보는 공간." />
+    <meta property="og:image" content={new URL('/images/hero.png', Astro.site)} />
+    <meta property="og:url" content={Astro.site} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <slot />
+  </body>
+</html>

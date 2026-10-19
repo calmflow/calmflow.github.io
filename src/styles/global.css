@@ -35,3 +35,7 @@ button.contact-link{border:0;cursor:pointer;font-family:inherit}
 .contact-submit:hover{background:#303b5a}
 .contact-submit:disabled{opacity:.55;cursor:wait}
 @media(max-width:640px){.contact-dialog{padding:24px 20px;border-radius:14px}.contact-link{margin-top:25px}}
+
+/* Keep optional contact details discreet; honeypot is never exposed to visitors. */
+.contact-optional{font-size:11px;color:#747b8a;font-weight:400}
+.contact-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}

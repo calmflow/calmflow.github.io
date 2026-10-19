@@ -4,7 +4,7 @@
     <p class="eyebrow">THE NEXT MOMENT</p>
     <h2 id="closing-title">우리, 함께 시작해요.</h2>
     <p>AI 교육이나 새로운 프로젝트에 관해<br class="mobile-break" /> 이야기 나누고 싶다면 편하게 연락해 주세요.</p>
-    <button class="contact-link" type="button" id="contact-open" aria-haspopup="dialog">문의하기 <span aria-hidden="true">↗</span></button>
+    <button class="contact-link" type="button" id="contact-open" data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">문의하기 <span aria-hidden="true">↗</span></button>
   </div>
 </section>
 
@@ -31,18 +31,22 @@
 
 <script>
   const dialog = document.querySelector<HTMLDialogElement>('#contact-dialog');
-  const openButton = document.querySelector<HTMLButtonElement>('#contact-open');
+  const openButtons = document.querySelectorAll<HTMLButtonElement>('[data-contact-open]');
+  let lastOpenButton: HTMLButtonElement | null = null;
   const closeButton = document.querySelector<HTMLButtonElement>('#contact-close');
   const form = document.querySelector<HTMLFormElement>('#contact-form');
   const status = document.querySelector<HTMLParagraphElement>('#contact-status');
   const submitButton = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
 
-  openButton?.addEventListener('click', () => dialog?.showModal());
+  openButtons.forEach((button) => button.addEventListener('click', () => {
+    lastOpenButton = button;
+    if (dialog && !dialog.open) dialog.showModal();
+  }));
   closeButton?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
   });
-  dialog?.addEventListener('close', () => openButton?.focus());
+  dialog?.addEventListener('close', () => lastOpenButton?.focus());
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();

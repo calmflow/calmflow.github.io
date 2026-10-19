@@ -18,9 +18,12 @@
     <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required />
     <label for="contact-email">이메일</label>
     <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+    <label for="contact-phone">전화번호 <span class="contact-optional">(선택)</span></label>
+    <input id="contact-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" placeholder="010-1234-5678" />
     <label for="contact-message">문의 내용</label>
     <textarea id="contact-message" name="message" rows="5" maxlength="5000" required></textarea>
-    <p class="contact-privacy">입력한 정보는 문의에 답변하기 위한 용도로 Formspree를 통해 전송됩니다.</p>
+    <div class="contact-honeypot" aria-hidden="true"><label for="contact-gotcha">이 칸은 비워두세요</label><input id="contact-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></div>
+    <p class="contact-privacy">이름, 이메일, 문의 내용은 답변을 위해 수집합니다. 전화번호는 선택 사항입니다. 입력한 정보는 Formspree를 통해 전송됩니다. 주민등록번호, 비밀번호 등 민감한 정보는 입력하지 마세요.</p>
     <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
     <button type="submit" class="contact-submit">문의 보내기 <span aria-hidden="true">↗</span></button>
   </form>

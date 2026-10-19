@@ -5,5 +5,9 @@
     <a href="#philosophy">철학</a>
     <a href="#work">하는 일</a>
   </nav>
-  <a class="header-link" href="#closing">함께 시작하기 <span aria-hidden="true">↗</span></a>
+  <button class="header-link" type="button" data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">함께 시작하기 <span aria-hidden="true">↗</span></button>
+<style>
+  button.header-link { border: 0; cursor: pointer; font-family: inherit; }
+  button.header-link:focus-visible { outline: 2px solid #4964a1; outline-offset: 7px; }
+</style>
 </header>
